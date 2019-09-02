@@ -1,8 +1,11 @@
-#todo-error{
+#todo-error {
   color: red;
   font-size: 2em;
 }
-body{
+body {
   background-size: cover;
   background-repeat: no-repeat;
+}
+.strike {
+  text-decoration: line-through;
 }

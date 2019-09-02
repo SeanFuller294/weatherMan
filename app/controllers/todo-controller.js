@@ -4,12 +4,25 @@ const _todoService = new TodoService()
 
 //TODO Create the render function
 function _drawTodos() {
-	let todoSpot = document.getElementById("todos")
+	let todoSpot = document.getElementById("todo-list")
+	todoSpot.style.backgroundColor = "rgba(0,0,0,.4)"
+	todoSpot.style.color = "white"
+
 	let myTodos = _todoService.MyTodos
-	let template = ""
+	let template = `<h5>${myTodos.length} tasks</h5><ul>`
 	myTodos.forEach(todo => {
-		template += todo.getTemplate()
+		let todoID = todo._id
+		let strikeThrough = todo.completed ? 'strike' : ''
+		template += `
+		<li id='${todoID}' class='${strikeThrough}'>${todo.description}</li>
+		<button class="btn btn-danger" onclick="app.controllers.todoController.removeTodo('${todoID}')">
+			delete
+		</button>
+		<button class="btn btn-success" onclick="app.controllers.todoController.toggleTodoStatus('${todoID}')">
+			Complete
+		</button>`
 	})
+	template += "</ul>"
 	todoSpot.innerHTML = template
 }
 

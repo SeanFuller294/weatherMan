@@ -6,32 +6,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Inspire</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos">
-			<form onsubmit="app.controllers.todoController.addTodo(event)">
-				<div class="form-group">
-					<label for="description"></label>
-					<input type="text" class="form-control" name="description" placeholder="Enter Task" required>
-				</div>
-				<button class="btn btn-success" type="submit">Add Task</button>
-			</form>
+	<div class="container-fluid">
+		<div class="row justify-content-center d-flex">
+			<div class="col-1" id="weather">
+				Your Weather Template
+			</div>
+			<div class="col-11" id="quote">
+				The Quote
+			</div>
 		</div>
-	</div>
+
+		<div id="todo-error"></div>
+		<div class="row justify-content-center d-flex">
+			<form onsubmit=""></form>
+			<div id="todos">
+				<form onsubmit="app.controllers.todoController.addTodo(event)">
+					<div class="form-group">
+						<label for="description"></label>
+						<input type="text" class="form-control" name="description" placeholder="Enter Task" required>
+					</div>
+					<button class="btn btn-success" type="submit">Add Task</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" id="todo-list">
+
+			</div>
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
