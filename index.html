@@ -22,7 +22,16 @@
 		A Todo List
 		<div id="todo-error"></div>
 		<form onsubmit=""></form>
-		<div id="todos"></div>
+		<div id="todos">
+			<form onsubmit="app.controllers.todoController.addTodo(event)">
+				<div class="form-group">
+					<label for="description"></label>
+					<input type="text" class="form-control" name="description" placeholder="Enter Task" required>
+				</div>
+				<button class="btn btn-success" type="submit">Add Task</button>
+			</form>
+		</div>
+	</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

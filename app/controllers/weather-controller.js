@@ -8,7 +8,12 @@ var _weatherService = new WeatherService()
 
 //TODO Complete rendering data to the screen
 function drawWeather() {
-	console.log("THE WEATHER MAN SAYS:", _weatherService.Weather)
+	let weather = document.getElementById("weather")
+	weather.style.backgroundColor = "rgba(0,0,0,.4)"
+	weather.style.color = "white"
+	let temp = _weatherService.Weather
+	// @ts-ignore
+	weather.innerHTML = temp.tempF + "°F"
 }
 
 export default class WeatherController {

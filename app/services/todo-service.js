@@ -2,7 +2,7 @@
 
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/seanfuller/todos/',
 	timeout: 3000
 });
 
@@ -21,6 +21,9 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
+	get MyTodos() {
+		return _state.todos
+	}
 	get TodoError() {
 		return _state.error
 	}
@@ -33,7 +36,10 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
+				console.log("0-1-10--01-01-01", res.data.data);
+
 				//TODO Handle this response from the server
+				_setState("todos", res.data.data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -41,6 +47,8 @@ export default class TodoService {
 	addTodo(todo) {
 		todoApi.post('', todo)
 			.then(res => {
+				console.log(res);
+
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
 			})
 			.catch(err => _setState('error', err.response.data))

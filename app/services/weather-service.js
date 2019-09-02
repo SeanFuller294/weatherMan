@@ -7,7 +7,7 @@ const weatherApi = axios.create({
 });
 
 let _state = {
-	weather: {}
+	weather: []
 }
 
 let _subscribers = {

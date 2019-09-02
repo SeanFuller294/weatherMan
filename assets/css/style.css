@@ -2,3 +2,7 @@
   color: red;
   font-size: 2em;
 }
+body{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
