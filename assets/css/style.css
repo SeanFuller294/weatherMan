@@ -9,3 +9,6 @@ body {
 .strike {
   text-decoration: line-through;
 }
+.h-50{
+  height: 500px
+}
