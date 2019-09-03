@@ -9,7 +9,11 @@ function _drawTodos() {
 	todoSpot.style.color = "white"
 
 	let myTodos = _todoService.MyTodos
-	let template = `<h5>${myTodos.length} tasks</h5><ul>`
+	let plural = 's'
+	if (myTodos.length == 1) {
+		plural = ''
+	}
+	let template = `<h5>${myTodos.length} task${plural}</h5><ul>`
 	myTodos.forEach(todo => {
 		let todoID = todo._id
 		let strikeThrough = todo.completed ? 'strike' : ''

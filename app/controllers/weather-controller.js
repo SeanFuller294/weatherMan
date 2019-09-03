@@ -13,7 +13,7 @@ function drawWeather() {
 	weather.style.color = "white"
 	let temp = _weatherService.Weather
 	// @ts-ignore
-	weather.innerHTML = temp.tempF + "°F"
+	weather.innerHTML = `${temp.tempF}°F <br>${temp.description}`
 }
 
 export default class WeatherController {
