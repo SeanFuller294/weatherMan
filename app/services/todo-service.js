@@ -23,6 +23,7 @@ function _setState(prop, data) {
 export default class TodoService {
 	get MyTodos() {
 		return _state.todos
+		// return _state.todos.map(t => JSON.parse(JSON.stringify(t))) //NOTE safer to do this to break reference to the copy in your state
 	}
 	get TodoError() {
 		return _state.error

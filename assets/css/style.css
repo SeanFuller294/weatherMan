@@ -3,12 +3,10 @@
   font-size: 2em;
 }
 body {
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .strike {
   text-decoration: line-through;
-}
-.h-50{
-  height: 500px
 }

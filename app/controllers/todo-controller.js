@@ -9,10 +9,7 @@ function _drawTodos() {
 	todoSpot.style.color = "white"
 
 	let myTodos = _todoService.MyTodos
-	let plural = 's'
-	if (myTodos.length == 1) {
-		plural = ''
-	}
+	let plural = myTodos.length == 1 ? '' : 's'
 	let template = `<h5>${myTodos.length} task${plural}</h5><ul>`
 	myTodos.forEach(todo => {
 		let todoID = todo._id
